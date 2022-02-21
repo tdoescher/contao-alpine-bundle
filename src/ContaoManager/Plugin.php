@@ -9,14 +9,21 @@
  * @copyright   tdoescher.de - WEB und IT <https://tdoescher.de>
  */
 
-namespace tdoescher\CokibanBundle\ContaoManager;
+namespace tdoescher\AlpineJSBundle\ContaoManager;
 
+use Contao\CoreBundle\ContaoCoreBundle;
 use Contao\ManagerPlugin\Bundle\BundlePluginInterface;
+use Contao\ManagerPlugin\Bundle\Config\BundleConfig;
 use Contao\ManagerPlugin\Bundle\Parser\ParserInterface;
+use tdoescher\AlpineJSBundle\AlpineJSBundle;
 
 class Plugin implements BundlePluginInterface
 {
     public function getBundles(ParserInterface $parser): array
     {
+        return [
+            BundleConfig::create(AlpineJSBundle::class)
+                ->setLoadAfter([ContaoCoreBundle::class]),
+        ];
     }
 }
