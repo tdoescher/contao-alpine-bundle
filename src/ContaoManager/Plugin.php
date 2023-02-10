@@ -6,7 +6,7 @@
  * @package     tdoescher/alpinejs-bundle
  * @author      Torben Döscher <mail@tdoescher.de>
  * @license     LGPL
- * @copyright   tdoescher.de - WEB und IT <https://tdoescher.de>
+ * @copyright   tdoescher.de // WEB & IT <https://tdoescher.de>
  */
 
 namespace tdoescher\AlpineJSBundle\ContaoManager;
@@ -19,11 +19,11 @@ use tdoescher\AlpineJSBundle\AlpineJSBundle;
 
 class Plugin implements BundlePluginInterface
 {
-    public function getBundles(ParserInterface $parser): array
-    {
-        return [
-            BundleConfig::create(AlpineJSBundle::class)
-                ->setLoadAfter([ContaoCoreBundle::class]),
-        ];
-    }
+  public function getBundles(ParserInterface $parser): array
+  {
+    return [
+      BundleConfig::create(AlpineJSBundle::class)
+        ->setLoadAfter([ContaoCoreBundle::class]),
+    ];
+  }
 }
