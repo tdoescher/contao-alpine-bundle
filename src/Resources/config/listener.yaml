@@ -1,0 +1,7 @@
+services:
+  _defaults:
+    autoconfigure: true
+
+  tdoescher\AlpineJSBundle\EventListener\CompileFormFieldsListener: ~
+  tdoescher\AlpineJSBundle\EventListener\LoadFormFieldListener: ~
+  tdoescher\AlpineJSBundle\EventListener\ParseFrontendTemplateListener: ~

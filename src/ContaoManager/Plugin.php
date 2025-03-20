@@ -19,11 +19,9 @@ use tdoescher\AlpineJSBundle\AlpineJSBundle;
 
 class Plugin implements BundlePluginInterface
 {
-  public function getBundles(ParserInterface $parser): array
-  {
-    return [
-      BundleConfig::create(AlpineJSBundle::class)
-        ->setLoadAfter([ContaoCoreBundle::class]),
-    ];
-  }
+    public function getBundles(ParserInterface $parser): array
+    {
+        return [ BundleConfig::create(AlpineJSBundle::class)
+            ->setLoadAfter([ ContaoCoreBundle::class ]) ];
+    }
 }

@@ -1,0 +1,40 @@
+<?xml version="1.0" ?>
+<xliff version="1.1">
+    <file datatype="php" original="contao/languages/en/tl_form.php" source-language="en">
+        <body>
+            <trans-unit id="tl_form.alpinejs_legend">
+                <source>Alpine.js</source>
+            </trans-unit>
+            <trans-unit id="tl_form.alpinejsActive.0">
+                <source>Activate Alpine.js?</source>
+            </trans-unit>
+            <trans-unit id="tl_form.alpinejsActive.1">
+                <source>Activate Alpine.js for this form.</source>
+            </trans-unit>
+            <trans-unit id="tl_form.alpinejsAttr.0">
+                <source>Attribute Prefix</source>
+            </trans-unit>
+            <trans-unit id="tl_form.alpinejsAttr.1">
+                <source>Alpine.js attributes with a “data-” in front.</source>
+            </trans-unit>
+            <trans-unit id="tl_form.alpinejsObj.0">
+                <source>Object name</source>
+            </trans-unit>
+            <trans-unit id="tl_form.alpinejsObj.1">
+                <source>Object in which the form fields are saved.</source>
+            </trans-unit>
+            <trans-unit id="tl_form.xData.0">
+                <source>Form x-data</source>
+            </trans-unit>
+            <trans-unit id="tl_form.xData.1">
+                <source>Set the x-data attribute for the form.</source>
+            </trans-unit>
+            <trans-unit id="tl_form.xInit.0">
+                <source>Form x-init</source>
+            </trans-unit>
+            <trans-unit id="tl_form.xInit.1">
+                <source>Set the x-init attribute for the form.</source>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

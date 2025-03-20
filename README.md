@@ -1,3 +1,4 @@
-# Ermöglicht es Alpine.JS in Contao zu verwenden.
+# Ermöglicht es Alpine.js in den Contao Formularen zu verwenden.
 
-Im Seitenlayout kann mann im Bereich JavaScript, mittels dem "js_alpine" Template, Alpine.JS Integrieren.
+In den Formularen und deren Felder können nun Alpine.js-Tags definiert werden und somit können die Formulare dynamisch gestaltet werden.
+Im Seitenlayout muss das Template "js_alpine" aktiviert werden.
