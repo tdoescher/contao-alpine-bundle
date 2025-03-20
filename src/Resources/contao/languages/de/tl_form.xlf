@@ -17,12 +17,6 @@
             <trans-unit id="tl_form.alpinejsAttr.1">
                 <source>Alpine.js attributen ein "data-" voranstellen.</source>
             </trans-unit>
-            <trans-unit id="tl_form.alpinejsObj.0">
-                <source>Objektname</source>
-            </trans-unit>
-            <trans-unit id="tl_form.alpinejsObj.1">
-                <source>Objekt in dem die Formularfelder gespeichert werden.</source>
-            </trans-unit>
             <trans-unit id="tl_form.xData.0">
                 <source>Formular x-data</source>
             </trans-unit>

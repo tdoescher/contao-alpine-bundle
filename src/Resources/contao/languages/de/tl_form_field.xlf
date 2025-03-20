@@ -17,6 +17,12 @@
             <trans-unit id="tl_form_field.xShow.1">
                 <source>Attribut x-show für dieses Widget setzen.</source>
             </trans-unit>
+            <trans-unit id="tl_form_field.xModel.0">
+                <source>Feld x-model</source>
+            </trans-unit>
+            <trans-unit id="tl_form_field.xModel.1">
+                <source>Attribut x-model für dieses Feld überschreiben (Standard = Feldname).</source>
+            </trans-unit>
             <trans-unit id="tl_form_field.xOnInput.0">
                 <source>Feld @input</source>
             </trans-unit>

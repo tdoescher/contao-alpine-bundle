@@ -5,7 +5,7 @@
 use Contao\CoreBundle\DataContainer\PaletteManipulator;
 
 $GLOBALS['TL_DCA']['tl_form']['palettes']['__selector__'][] = 'alpinejsActive';
-$GLOBALS['TL_DCA']['tl_form']['subpalettes']['alpinejsActive'] = 'alpinejsObj,alpinejsAttr,xData,xInit';
+$GLOBALS['TL_DCA']['tl_form']['subpalettes']['alpinejsActive'] = 'xData,xInit,alpinejsAttr';
 
 PaletteManipulator::create()
     ->addLegend('alpinejs_legend', 'config_legend')
@@ -18,17 +18,9 @@ $GLOBALS['TL_DCA']['tl_form']['fields']['alpinejsActive'] = [
     'sql' => [ 'type' => 'boolean', 'default' => false ]
 ];
 
-$GLOBALS['TL_DCA']['tl_form']['fields']['alpinejsObj'] = [
-    'exclude' => true,
-    'search' => true,
-    'inputType' => 'text',
-    'eval' => [ 'maxlength' => 255, 'tl_class' => 'clr w50' ],
-    'sql' => [ 'type' => 'string', 'default' => '' ]
-];
-
 $GLOBALS['TL_DCA']['tl_form']['fields']['alpinejsAttr'] = [
     'inputType' => 'checkbox',
-    'eval' => [ 'submitOnChange' => true, 'tl_class' => 'w50 m12' ],
+    'eval' => [ 'submitOnChange' => true, 'tl_class' => 'clr w50 m12' ],
     'sql' => [ 'type' => 'boolean', 'default' => false ]
 ];
 

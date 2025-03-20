@@ -13,7 +13,6 @@ namespace tdoescher\AlpineJSBundle\EventListener;
 
 use Contao\CoreBundle\DependencyInjection\Attribute\AsHook;
 use Contao\FrontendTemplate;
-use Contao\StringUtil;
 
 #[AsHook('parseFrontendTemplate')]
 class ParseFrontendTemplateListener

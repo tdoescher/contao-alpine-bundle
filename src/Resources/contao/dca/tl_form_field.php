@@ -18,6 +18,7 @@ PaletteManipulator::create()
     ->addLegend('alpinejs_legend', 'fconfig_legend')
     ->addField('xInit', 'alpinejs_legend', PaletteManipulator::POSITION_APPEND)
     ->addField('xShow', 'alpinejs_legend', PaletteManipulator::POSITION_APPEND)
+    ->addField('xModel', 'alpinejs_legend', PaletteManipulator::POSITION_APPEND)
     ->addField('xOnInput', 'alpinejs_legend', PaletteManipulator::POSITION_APPEND)
     ->addField('xOnChange', 'alpinejs_legend', PaletteManipulator::POSITION_APPEND)
     ->addField('xOnFocus', 'alpinejs_legend', PaletteManipulator::POSITION_APPEND)
@@ -54,6 +55,14 @@ $GLOBALS['TL_DCA']['tl_form_field']['fields']['xShow'] = [
     'inputType' => 'text',
     'eval' => [ 'rte' => 'ace|js', 'tl_class' => 'w50' ],
     'sql' => [ 'type' => 'text', 'default' => '' ]
+];
+
+$GLOBALS['TL_DCA']['tl_form_field']['fields']['xModel'] = [
+    'exclude' => true,
+    'search' => true,
+    'inputType' => 'text',
+    'eval' => [ 'maxlength' => 255, 'tl_class' => 'clr' ],
+    'sql' => [ 'type' => 'string', 'default' => '' ]
 ];
 
 $GLOBALS['TL_DCA']['tl_form_field']['fields']['xOnInput'] = [

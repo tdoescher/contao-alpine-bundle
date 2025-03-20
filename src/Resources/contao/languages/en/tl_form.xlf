@@ -17,12 +17,6 @@
             <trans-unit id="tl_form.alpinejsAttr.1">
                 <source>Alpine.js attributes with a “data-” in front.</source>
             </trans-unit>
-            <trans-unit id="tl_form.alpinejsObj.0">
-                <source>Object name</source>
-            </trans-unit>
-            <trans-unit id="tl_form.alpinejsObj.1">
-                <source>Object in which the form fields are saved.</source>
-            </trans-unit>
             <trans-unit id="tl_form.xData.0">
                 <source>Form x-data</source>
             </trans-unit>

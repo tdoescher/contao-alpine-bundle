@@ -13,7 +13,6 @@ namespace tdoescher\AlpineJSBundle\EventListener;
 
 use Contao\CoreBundle\DependencyInjection\Attribute\AsHook;
 use Contao\Form;
-use Contao\StringUtil;
 use Contao\Widget;
 
 #[AsHook('loadFormField')]
@@ -26,7 +25,6 @@ class LoadFormFieldListener
         }
 
         $attr = $form->alpinejsAttr ? 'data-x' : 'x';
-        $obj = $form->alpinejsObj ? $form->alpinejsObj . '.' : '';
 
         // Widget
         $widget->rowAttributes = '';
@@ -36,7 +34,7 @@ class LoadFormFieldListener
         // Field
         if (in_array($widget->type, [ 'text', 'textdigit', 'textcustom', 'password', 'passwordcustom', 'textarea', 'textareacustom', 'select', 'radio', 'checkbox', 'upload', 'range', 'hidden', 'hiddencustom', 'submit' ])) {
             if ($widget->type !== 'submit') {
-                $widget->addAttribute($attr . '-model', $obj . $widget->name);
+                $widget->addAttribute($attr . '-model', $widget->xModel ?: $widget->name);
             }
 
             if ($widget->xOnInput) $widget->addAttribute($attr . '-on:input', $widget->xOnInput);
@@ -52,7 +50,7 @@ class LoadFormFieldListener
             $options = [];
             foreach ($widget->options as $index => $option) {
                 $options[$index] = $option;
-                $options[$index][$attr . '-model'] = $obj . $widget->name;
+                $options[$index][$attr . '-model'] = $widget->xModel ?: $widget->name;
                 if ($widget->xOnInput) $options[$index][$attr . '-on:input'] = $widget->xOnInput;
                 if ($widget->xOnChange) $options[$index][$attr . '-on:change'] = $widget->xOnChange;
                 if ($widget->xOnFocus) $options[$index][$attr . '-on:focus'] = $widget->xOnFocus;
