@@ -19,8 +19,11 @@ class ParseFrontendTemplateListener
 {
     public function __invoke(string $buffer, string $templateName, FrontendTemplate $template): string
     {
-        if($templateName !== 'form_wrapper' || !$template->alpinejsActive)
-        {
+        if (!in_array($templateName, ['form_wrapper', 'ajaxform', 'ajaxform_inline'])) {
+            return $buffer;
+        }
+
+        if (!$template->alpinejsActive) {
             return $buffer;
         }
 
@@ -30,6 +33,6 @@ class ParseFrontendTemplateListener
         if ($template->xData) $attributes .= " $attr-data=\"$template->xData\"";
         if ($template->xInit) $attributes .= " $attr-init=\"$template->xInit\"";
 
-        return preg_replace('/<div class="ce_form([^>]*)>/ui', '<div class="ce_form$1'.$attributes.'>', $buffer);
+        return preg_replace('/<div class="ce_form([^>]*)>/ui', '<div class="ce_form$1' . $attributes . '>', $buffer);
     }
 }
