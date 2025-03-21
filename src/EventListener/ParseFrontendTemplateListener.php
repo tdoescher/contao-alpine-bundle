@@ -19,7 +19,7 @@ class ParseFrontendTemplateListener
 {
     public function __invoke(string $buffer, string $templateName, FrontendTemplate $template): string
     {
-        if (!str_starts_with($templateName, 'form_wrapper') || !str_starts_with($templateName, 'ajaxform')) {
+        if (!str_starts_with($templateName, 'form_wrapper') && !str_starts_with($templateName, 'ajaxform')) {
             return $buffer;
         }
 
