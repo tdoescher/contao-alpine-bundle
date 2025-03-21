@@ -5,7 +5,7 @@
 use Contao\CoreBundle\DataContainer\PaletteManipulator;
 
 $GLOBALS['TL_DCA']['tl_form']['palettes']['__selector__'][] = 'alpinejsActive';
-$GLOBALS['TL_DCA']['tl_form']['subpalettes']['alpinejsActive'] = 'xData,xInit,alpinejsAttr';
+$GLOBALS['TL_DCA']['tl_form']['subpalettes']['alpinejsActive'] = 'xData,xInit,xSubmit,alpinejsPrefix';
 
 PaletteManipulator::create()
     ->addLegend('alpinejs_legend', 'config_legend')
@@ -18,24 +18,29 @@ $GLOBALS['TL_DCA']['tl_form']['fields']['alpinejsActive'] = [
     'sql' => [ 'type' => 'boolean', 'default' => false ]
 ];
 
-$GLOBALS['TL_DCA']['tl_form']['fields']['alpinejsAttr'] = [
-    'inputType' => 'checkbox',
-    'eval' => [ 'submitOnChange' => true, 'tl_class' => 'clr w50 m12' ],
-    'sql' => [ 'type' => 'boolean', 'default' => false ]
-];
-
 $GLOBALS['TL_DCA']['tl_form']['fields']['xData'] = [
     'exclude' => true,
-    'search' => true,
     'inputType' => 'textarea',
-    'eval' => [ 'rte' => 'ace|js', 'tl_class' => 'clr w50' ],
+    'eval' => [ 'rte' => 'ace|js', 'tl_class' => 'clr w100' ],
     'sql' => [ 'type' => 'text', 'default' => '' ]
 ];
 
 $GLOBALS['TL_DCA']['tl_form']['fields']['xInit'] = [
     'exclude' => true,
-    'search' => true,
     'inputType' => 'text',
-    'eval' => [ 'rte' => 'ace|js', 'tl_class' => 'w50' ],
+    'eval' => [ 'rte' => 'ace|js', 'tl_class' => 'clr w100' ],
     'sql' => [ 'type' => 'text', 'default' => '' ]
+];
+
+$GLOBALS['TL_DCA']['tl_form']['fields']['xSubmit'] = [
+    'exclude' => true,
+    'inputType' => 'text',
+    'eval' => [ 'rte' => 'ace|js', 'tl_class' => 'clr w100' ],
+    'sql' => [ 'type' => 'text', 'default' => '' ]
+];
+
+$GLOBALS['TL_DCA']['tl_form']['fields']['alpinejsPrefix'] = [
+    'inputType' => 'checkbox',
+    'eval' => [ 'tl_class' => 'clr w50' ],
+    'sql' => [ 'type' => 'boolean', 'default' => false ]
 ];

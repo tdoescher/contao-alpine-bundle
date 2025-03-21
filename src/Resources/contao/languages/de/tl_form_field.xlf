@@ -2,8 +2,11 @@
 <xliff version="1.1">
     <file datatype="php" original="contao/languages/de/tl_form_field.php" source-language="de">
         <body>
-            <trans-unit id="tl_form_field.alpinejs_legend">
-                <source>Alpine.js</source>
+            <trans-unit id="tl_form_field.alpinejsField_legend">
+                <source>Alpine.js Feld/Button</source>
+            </trans-unit>
+            <trans-unit id="tl_form_field.alpinejsWidget_legend">
+                <source>Alpine.js Widget</source>
             </trans-unit>
             <trans-unit id="tl_form_field.xInit.0">
                 <source>Widget x-init</source>
@@ -16,6 +19,12 @@
             </trans-unit>
             <trans-unit id="tl_form_field.xShow.1">
                 <source>Attribut x-show für dieses Widget setzen.</source>
+            </trans-unit>
+            <trans-unit id="tl_form_field.xClass.0">
+                <source>Widget :class</source>
+            </trans-unit>
+            <trans-unit id="tl_form_field.xClass.1">
+                <source>Attribut :class für dieses Widget setzen.</source>
             </trans-unit>
             <trans-unit id="tl_form_field.xModel.0">
                 <source>Feld x-model</source>
@@ -35,29 +44,29 @@
             <trans-unit id="tl_form_field.xOnChange.1">
                 <source>Attribut @change für dieses Feld setzen.</source>
             </trans-unit>
-            <trans-unit id="tl_form_field.xOnFocus.0">
-                <source>Feld @focus</source>
-            </trans-unit>
-            <trans-unit id="tl_form_field.xOnFocus.1">
-                <source>Attribut @focus für dieses Feld setzen.</source>
-            </trans-unit>
-            <trans-unit id="tl_form_field.xOnBlur.0">
-                <source>Feld @blur</source>
-            </trans-unit>
-            <trans-unit id="tl_form_field.xOnBlur.1">
-                <source>Attribut @blur für dieses Feld setzen.</source>
-            </trans-unit>
             <trans-unit id="tl_form_field.xOnClick.0">
                 <source>Button @click</source>
             </trans-unit>
             <trans-unit id="tl_form_field.xOnClick.1">
                 <source>Attribut @click für diesen Button setzen.</source>
             </trans-unit>
-            <trans-unit id="tl_form_field.xOnSubmit.0">
-                <source>Button @submit</source>
+            <trans-unit id="tl_form_field.xOnFocus.0">
+                <source>Feld/Button @focus</source>
             </trans-unit>
-            <trans-unit id="tl_form_field.xOnSubmit.1">
-                <source>Attribut @submit für diesen Button setzen.</source>
+            <trans-unit id="tl_form_field.xOnFocus.1">
+                <source>Attribut @focus für dieses Feld/Button setzen.</source>
+            </trans-unit>
+            <trans-unit id="tl_form_field.xOnBlur.0">
+                <source>Feld/Button @blur</source>
+            </trans-unit>
+            <trans-unit id="tl_form_field.xOnBlur.1">
+                <source>Attribut @blur für dieses Feld/Button setzen.</source>
+            </trans-unit>
+            <trans-unit id="tl_form_field.xBindClass.0">
+                <source>Feld/Button :class</source>
+            </trans-unit>
+            <trans-unit id="tl_form_field.xBindClass.1">
+                <source>Attribut :class für dieses Feld/Button setzen.</source>
             </trans-unit>
             <trans-unit id="tl_form_field.xBindDisabled.0">
                 <source>Feld/Button :disabled</source>

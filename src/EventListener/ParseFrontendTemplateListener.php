@@ -27,11 +27,13 @@ class ParseFrontendTemplateListener
             return $buffer;
         }
 
-        $attr = $template->alpinejsAttr ? 'data-x' : 'x';
+        $prefix = $template->alpinejsPrefix ? 'data-x-' : 'x-';
+        $prefixOn = $template->alpinejsPrefix ? 'data-x-on:' : '@';
 
         $attributes = '';
-        if ($template->xData) $attributes .= " $attr-data=\"$template->xData\"";
-        if ($template->xInit) $attributes .= " $attr-init=\"$template->xInit\"";
+        if ($template->xData) $attributes .= ' ' . $prefix . 'data="' . $template->xData . '"';
+        if ($template->xInit) $attributes .= ' ' . $prefix . 'init="' . $template->xInit . '"';
+        if ($template->xSubmit) $attributes .= ' ' . $prefixOn . 'submit="' . $template->xSubmit . '"';
 
         return preg_replace('/<div class="ce_form([^>]*)>/ui', '<div class="ce_form$1' . $attributes . '>', $buffer);
     }

@@ -24,41 +24,61 @@ class LoadFormFieldListener
             return $widget;
         }
 
-        $attr = $form->alpinejsAttr ? 'data-x' : 'x';
+        $prefix = $form->alpinejsPrefix ? 'data-x-' : 'x-';
+        $prefixBind = $form->alpinejsPrefix ? 'data-x-bind:' : ':';
+        $prefixOn = $form->alpinejsPrefix ? 'data-x-on:' : '@';
 
-        // Widget
         $widget->rowAttributes = '';
-        if ($widget->xInit) $widget->rowAttributes .= " $attr-init=\"$widget->xInit\"";
-        if ($widget->xShow) $widget->rowAttributes .= " $attr-show=\"$widget->xShow\"";
 
-        // Field
-        if (in_array($widget->type, [ 'text', 'textdigit', 'textcustom', 'password', 'passwordcustom', 'textarea', 'textareacustom', 'select', 'radio', 'checkbox', 'upload', 'range', 'hidden', 'hiddencustom', 'submit' ])) {
-            if ($widget->type !== 'submit') {
-                $widget->addAttribute($attr . '-model', $widget->xModel ?: $widget->name);
-            }
+        if (in_array($widget->type, [ 'text', 'textdigit', 'textcustom', 'password', 'passwordcustom', 'textarea', 'textareacustom' ])) {
+            if ($widget->xInit) $widget->rowAttributes .= ' ' . $prefix . 'init="' . $widget->xInit . '"';
+            if ($widget->xShow) $widget->rowAttributes .= ' ' . $prefix . 'show="' . $widget->xShow . '"';
+            if ($widget->xClass) $widget->rowAttributes .= ' ' . $prefixBind . 'class="' . $widget->xClass . '"';
 
-            if ($widget->xOnInput) $widget->addAttribute($attr . '-on:input', $widget->xOnInput);
-            if ($widget->xOnChange) $widget->addAttribute($attr . '-on:change', $widget->xOnChange);
-            if ($widget->xOnFocus) $widget->addAttribute($attr . '-on:focus', $widget->xOnFocus);
-            if ($widget->xOnBlur) $widget->addAttribute($attr . '-on:blur', $widget->xOnBlur);
-            if ($widget->xBindRequired) $widget->addAttribute($attr . '-bind:required', $widget->xBindRequired);
-            if ($widget->xBindDisabled) $widget->addAttribute($attr . '-bind:disabled', $widget->xBindDisabled);
+            $widget->addAttribute($prefix . 'model', $widget->xModel ?: $widget->name);
+            if ($widget->xOnInput) $widget->addAttribute($prefixOn . 'input', $widget->xOnInput);
+            if ($widget->xOnChange) $widget->addAttribute($prefixOn . 'change', $widget->xOnChange);
+            if ($widget->xOnFocus) $widget->addAttribute($prefixOn . 'focus', $widget->xOnFocus);
+            if ($widget->xOnBlur) $widget->addAttribute($prefixOn . 'blur', $widget->xOnBlur);
+            if ($widget->xBindClass) $widget->addAttribute($prefixBind . 'class', $widget->xBindClass);
+            if ($widget->xBindDisabled) $widget->addAttribute($prefixBind . 'disabled', $widget->xBindDisabled);
+            if ($widget->xBindRequired) $widget->addAttribute($prefixBind . 'required', $widget->xBindRequired);
         }
 
-        // Options
-        if ($widget->type === 'checkbox') {
-            $options = [];
-            foreach ($widget->options as $index => $option) {
-                $options[$index] = $option;
-                $options[$index][$attr . '-model'] = $widget->xModel ?: $widget->name;
-                if ($widget->xOnInput) $options[$index][$attr . '-on:input'] = $widget->xOnInput;
-                if ($widget->xOnChange) $options[$index][$attr . '-on:change'] = $widget->xOnChange;
-                if ($widget->xOnFocus) $options[$index][$attr . '-on:focus'] = $widget->xOnFocus;
-                if ($widget->xOnBlur) $options[$index][$attr . '-on:blur'] = $widget->xOnBlur;
-                if ($widget->xBindRequired) $options[$index][$attr . '-bind:required'] = $widget->xBindRequired;
-                if ($widget->xBindDisabled) $options[$index][$attr . '-bind:disabled'] = $widget->xBindDisabled;
-            }
-            $widget->options = $options;
+        if (in_array($widget->type, [ 'select', 'radio', 'checkbox', 'upload', 'range' ])) {
+            if ($widget->xInit) $widget->rowAttributes .= ' ' . $prefix . 'init="' . $widget->xInit . '"';
+            if ($widget->xShow) $widget->rowAttributes .= ' ' . $prefix . 'show="' . $widget->xShow . '"';
+            if ($widget->xClass) $widget->rowAttributes .= ' ' . $prefixBind . 'class="' . $widget->xClass . '"';
+
+            $widget->addAttribute($prefix . 'model', $widget->xModel ?: $widget->name);
+            if ($widget->xOnChange) $widget->addAttribute($prefixOn . 'change', $widget->xOnChange);
+            if ($widget->xOnFocus) $widget->addAttribute($prefixOn . 'focus', $widget->xOnFocus);
+            if ($widget->xOnBlur) $widget->addAttribute($prefixOn . 'blur', $widget->xOnBlur);
+            if ($widget->xBindClass) $widget->addAttribute($prefixBind . 'class', $widget->xBindClass);
+            if ($widget->xBindDisabled) $widget->addAttribute($prefixBind . 'disabled', $widget->xBindDisabled);
+            if ($widget->xBindRequired) $widget->addAttribute($prefixBind . 'required', $widget->xBindRequired);
+        }
+
+        if (in_array($widget->type, [ 'hidden', 'hiddencustom' ])) {
+            if ($widget->xInit) $widget->rowAttributes .= ' ' . $prefix . 'init="' . $widget->xInit . '"';
+
+            $widget->addAttribute($prefix . 'model', $widget->xModel ?: $widget->name);
+            if ($widget->xOnInput) $widget->addAttribute($prefixOn . 'input', $widget->xOnInput);
+            if ($widget->xOnChange) $widget->addAttribute($prefixOn . 'change', $widget->xOnChange);
+            if ($widget->xBindRequired) $widget->addAttribute($prefixBind . 'required', $widget->xBindRequired);
+        }
+
+        if (in_array($widget->type, [  'submit' ])) {
+            if ($widget->xInit) $widget->rowAttributes .= ' ' . $prefix . 'init="' . $widget->xInit . '"';
+            if ($widget->xShow) $widget->rowAttributes .= ' ' . $prefix . 'show="' . $widget->xShow . '"';
+            if ($widget->xClass) $widget->rowAttributes .= ' ' . $prefixBind . 'class="' . $widget->xClass . '"';
+
+            if ($widget->xOnClick) $widget->addAttribute($prefixOn . 'input', $widget->xOnClick);
+            if ($widget->xOnFocus) $widget->addAttribute($prefixOn . 'focus', $widget->xOnFocus);
+            if ($widget->xOnBlur) $widget->addAttribute($prefixOn . 'blur', $widget->xOnBlur);
+            if ($widget->xBindClass) $widget->addAttribute($prefixBind . 'class', $widget->xBindClass);
+            if ($widget->xBindDisabled) $widget->addAttribute($prefixBind . 'disabled', $widget->xBindDisabled);
+            if ($widget->xBindRequired) $widget->addAttribute($prefixBind . 'required', $widget->xBindRequired);
         }
 
         return $widget;

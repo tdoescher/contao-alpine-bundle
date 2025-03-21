@@ -11,23 +11,29 @@
             <trans-unit id="tl_form.alpinejsActive.1">
                 <source>Activate Alpine.js for this form.</source>
             </trans-unit>
-            <trans-unit id="tl_form.alpinejsAttr.0">
+            <trans-unit id="tl_form.alpinejsPrefix.0">
                 <source>Attribute Prefix</source>
             </trans-unit>
-            <trans-unit id="tl_form.alpinejsAttr.1">
+            <trans-unit id="tl_form.alpinejsPrefix.1">
                 <source>Alpine.js attributes with a “data-” in front.</source>
             </trans-unit>
             <trans-unit id="tl_form.xData.0">
                 <source>Form x-data</source>
             </trans-unit>
             <trans-unit id="tl_form.xData.1">
-                <source>Set the x-data attribute for the form.</source>
+                <source>Set x-data attribute for the form.</source>
             </trans-unit>
             <trans-unit id="tl_form.xInit.0">
                 <source>Form x-init</source>
             </trans-unit>
             <trans-unit id="tl_form.xInit.1">
-                <source>Set the x-init attribute for the form.</source>
+                <source>Set x-init attribute for the form.</source>
+            </trans-unit>
+            <trans-unit id="tl_form.xSubmit.0">
+                <source>Form @submit</source>
+            </trans-unit>
+            <trans-unit id="tl_form.xSubmit.1">
+                <source>Set @submit attribute for the form..</source>
             </trans-unit>
         </body>
     </file>

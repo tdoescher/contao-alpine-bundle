@@ -11,10 +11,10 @@
             <trans-unit id="tl_form.alpinejsActive.1">
                 <source>Für dieses Formular Alpine.js aktivieren.</source>
             </trans-unit>
-            <trans-unit id="tl_form.alpinejsAttr.0">
-                <source>Attribute Prefix</source>
+            <trans-unit id="tl_form.alpinejsPrefix.0">
+                <source>Attribut Prefix</source>
             </trans-unit>
-            <trans-unit id="tl_form.alpinejsAttr.1">
+            <trans-unit id="tl_form.alpinejsPrefix.1">
                 <source>Alpine.js attributen ein "data-" voranstellen.</source>
             </trans-unit>
             <trans-unit id="tl_form.xData.0">
@@ -28,6 +28,12 @@
             </trans-unit>
             <trans-unit id="tl_form.xInit.1">
                 <source>Attribut x-init für das Formular setzen.</source>
+            </trans-unit>
+            <trans-unit id="tl_form.xSubmit.0">
+                <source>Formular @submit</source>
+            </trans-unit>
+            <trans-unit id="tl_form.xSubmit.1">
+                <source>Attribut @submit für das Formular setzen.</source>
             </trans-unit>
         </body>
     </file>

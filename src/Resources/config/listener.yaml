@@ -2,6 +2,8 @@ services:
   _defaults:
     autoconfigure: true
 
-  tdoescher\AlpineJSBundle\EventListener\CompileFormFieldsListener: ~
+  tdoescher\AlpineJSBundle\EventListener\DataContainer\AlpineJSFormFieldsCallback:
+    arguments:
+      - '@request_stack'
   tdoescher\AlpineJSBundle\EventListener\LoadFormFieldListener: ~
   tdoescher\AlpineJSBundle\EventListener\ParseFrontendTemplateListener: ~
