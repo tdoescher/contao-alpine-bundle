@@ -5,7 +5,7 @@
 use Contao\CoreBundle\DataContainer\PaletteManipulator;
 
 $GLOBALS['TL_DCA']['tl_form']['palettes']['__selector__'][] = 'alpinejsActive';
-$GLOBALS['TL_DCA']['tl_form']['subpalettes']['alpinejsActive'] = 'xData,xInit,xSubmit,alpinejsPrefix';
+$GLOBALS['TL_DCA']['tl_form']['subpalettes']['alpinejsActive'] = 'xData,xInit,xSubmit,xClass,alpinejsPrefix';
 
 PaletteManipulator::create()
     ->addLegend('alpinejs_legend', 'config_legend')
