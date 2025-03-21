@@ -30,6 +30,10 @@ class ParseFrontendTemplateListener
         $prefix = $template->alpinejsPrefix ? 'data-x-' : 'x-';
         $prefixOn = $template->alpinejsPrefix ? 'data-x-on:' : '@';
 
+        if ($template->xData && str_contains($template->xData, '&#35;&#35;model_object&#35;&#35;')) {
+            $template->xData = str_replace('&#35;&#35;model_object&#35;&#35;','{' . implode(', ', $GLOBALS['TL_ALPINEJS']['MODEL_OBJECT']) . ' }', $template->xData);
+        }
+
         $attributes = '';
         if ($template->xData) $attributes .= ' ' . $prefix . 'data="' . $template->xData . '"';
         if ($template->xInit) $attributes .= ' ' . $prefix . 'init="' . $template->xInit . '"';
