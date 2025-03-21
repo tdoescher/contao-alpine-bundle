@@ -63,13 +63,6 @@ $GLOBALS['TL_DCA']['tl_form_field']['fields']['xOnBlur'] = [
     'sql' => [ 'type' => 'text', 'default' => '' ]
 ];
 
-$GLOBALS['TL_DCA']['tl_form_field']['fields']['xOnSubmit'] = [
-    'exclude' => true,
-    'inputType' => 'text',
-    'eval' => [ 'rte' => 'ace|js', 'tl_class' => 'w50' ],
-    'sql' => [ 'type' => 'text', 'default' => '' ]
-];
-
 $GLOBALS['TL_DCA']['tl_form_field']['fields']['xBindClass'] = [
     'exclude' => true,
     'inputType' => 'text',
