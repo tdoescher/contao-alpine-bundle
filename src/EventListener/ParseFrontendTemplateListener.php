@@ -19,7 +19,7 @@ class ParseFrontendTemplateListener
 {
     public function __invoke(string $buffer, string $templateName, FrontendTemplate $template): string
     {
-        if (!in_array($templateName, ['form_wrapper', 'ajaxform', 'ajaxform_inline'])) {
+        if (!str_starts_with($templateName, 'form_wrapper') || !str_starts_with($templateName, 'ajaxform')) {
             return $buffer;
         }
 
@@ -29,6 +29,7 @@ class ParseFrontendTemplateListener
 
         $prefix = $template->alpinejsPrefix ? 'data-x-' : 'x-';
         $prefixOn = $template->alpinejsPrefix ? 'data-x-on:' : '@';
+        $prefixBind = $template->alpinejsPrefix ? 'data-x-bind:' : ':';
 
         if ($template->xData && str_contains($template->xData, '&#35;&#35;model_object&#35;&#35;')) {
             $template->xData = str_replace('&#35;&#35;model_object&#35;&#35;','{' . implode(', ', $GLOBALS['TL_ALPINEJS']['MODEL_OBJECT']) . ' }', $template->xData);
@@ -38,6 +39,7 @@ class ParseFrontendTemplateListener
         if ($template->xData) $attributes .= ' ' . $prefix . 'data="' . $template->xData . '"';
         if ($template->xInit) $attributes .= ' ' . $prefix . 'init="' . $template->xInit . '"';
         if ($template->xSubmit) $attributes .= ' ' . $prefixOn . 'submit="' . $template->xSubmit . '"';
+        if ($template->xClass) $attributes .= ' ' . $prefixBind . 'class="' . $template->xClass . '"';
 
         return preg_replace('/<div class="ce_form([^>]*)>/ui', '<div class="ce_form$1' . $attributes . '>', $buffer);
     }

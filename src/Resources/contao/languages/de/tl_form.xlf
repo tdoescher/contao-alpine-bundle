@@ -35,6 +35,12 @@
             <trans-unit id="tl_form.xSubmit.1">
                 <source>Attribut @submit für das Formular setzen.</source>
             </trans-unit>
+            <trans-unit id="tl_form.xClass.0">
+                <source>Formular :class</source>
+            </trans-unit>
+            <trans-unit id="tl_form.xClass.1">
+                <source>Attribut :class für das Formular setzen.</source>
+            </trans-unit>
         </body>
     </file>
 </xliff>

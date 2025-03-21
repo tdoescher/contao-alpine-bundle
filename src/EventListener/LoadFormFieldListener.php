@@ -29,8 +29,8 @@ class LoadFormFieldListener
         }
 
         $prefix = $form->alpinejsPrefix ? 'data-x-' : 'x-';
-        $prefixBind = $form->alpinejsPrefix ? 'data-x-bind:' : ':';
         $prefixOn = $form->alpinejsPrefix ? 'data-x-on:' : '@';
+        $prefixBind = $form->alpinejsPrefix ? 'data-x-bind:' : ':';
 
         $widget->rowAttributes = '';
 

@@ -33,7 +33,13 @@
                 <source>Form @submit</source>
             </trans-unit>
             <trans-unit id="tl_form.xSubmit.1">
-                <source>Set @submit attribute for the form..</source>
+                <source>Set @submit attribute for the form.</source>
+            </trans-unit>
+            <trans-unit id="tl_form.xClass.0">
+                <source>Form :class</source>
+            </trans-unit>
+            <trans-unit id="tl_form.xClass.1">
+                <source>Set :class attribute for the form.</source>
             </trans-unit>
         </body>
     </file>
