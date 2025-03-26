@@ -99,7 +99,6 @@ class AlpineJSFormFieldsCallback
                 ->addLegend('alpinejsField_legend', 'alpinejsWidget_legend')
                 ->addField('xModel', 'alpinejsField_legend', PaletteManipulator::POSITION_APPEND)
                 ->addField('xOnChange', 'alpinejsField_legend', PaletteManipulator::POSITION_APPEND)
-                ->addField('xOnInput', 'alpinejsField_legend', PaletteManipulator::POSITION_APPEND)
                 ->addField('xBindRequired', 'alpinejsField_legend', PaletteManipulator::POSITION_APPEND)
                 ->applyToPalette('hidden', 'tl_form_field')
                 ->applyToPalette('hiddencustom', 'tl_form_field');
@@ -115,7 +114,6 @@ class AlpineJSFormFieldsCallback
                 ->addField('xOnBlur', 'alpinejsField_legend', PaletteManipulator::POSITION_APPEND)
                 ->addField('xBindClass', 'alpinejsField_legend', PaletteManipulator::POSITION_APPEND)
                 ->addField('xBindDisabled', 'alpinejsField_legend', PaletteManipulator::POSITION_APPEND)
-                ->addField('xBindRequired', 'alpinejsField_legend', PaletteManipulator::POSITION_APPEND)
                 ->applyToPalette('submit', 'tl_form_field');
         }
     }
