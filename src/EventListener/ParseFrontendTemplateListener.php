@@ -41,6 +41,6 @@ class ParseFrontendTemplateListener
         if ($template->xSubmit) $attributes .= ' ' . $prefixOn . 'submit="' . $template->xSubmit . '"';
         if ($template->xClass) $attributes .= ' ' . $prefixBind . 'class="' . $template->xClass . '"';
 
-        return preg_replace('/<div class="(ce_form|content-form)([^>]*)>/ui', '<div class="$1$2' . $attributes . '>', $buffer);
+        return preg_replace('/<div class="(.*)" ([^>]*)>/ui', '<div$1' . $attributes . ' $2>', $buffer, 1);
     }
 }
