@@ -43,27 +43,31 @@ class LoadFormFieldListener
 
         // Field x-model, @change and :required
         if (in_array($widget->type, [ 'text', 'textdigit', 'textcustom', 'password', 'passwordcustom', 'textarea', 'textareacustom', 'select', 'radio', 'checkbox', 'upload', 'range', 'hidden', 'hiddencustom' ])) {
-            $xModel = $widget->xModel ?: $widget->name;
-            $widget->addAttribute($prefix . 'model', $xModel);
+            if ($form->xData && str_contains($form->xData, '&#35;&#35;model_object&#35;&#35;')) {
+                $xModel = $widget->xModel ?: $widget->name;
+                $widget->addAttribute($prefix . 'model', $xModel);
 
-            $default = '';
-            if ($widget->type === 'checkbox') {
-                $default = [];
-                foreach ($widget->options as $option) {
-                    if (isset($option['default']) && $option['default'] === "1") $default[] = $option['value'];
+                $default = '';
+                if ($widget->type === 'checkbox') {
+                    $default = [];
+                    foreach ($widget->options as $option) {
+                        if (isset($option['default']) && $option['default'] === "1") $default[] = $option['value'];
+                    }
+                    $default = count($default) ? $xModel . ": ['" . implode("', '", $default) . "']" : $xModel . ": []";
+                } elseif ($widget->type === 'radio') {
+                    foreach ($widget->options as $option) {
+                        if (isset($option['default']) && $option['default'] === "1") $default = $option['value'];
+                    }
+                    $default = $xModel . ": '" . $default . "'";
+                } elseif (is_int($widget->value) || is_float($widget->value) || $widget->value === "true" || $widget->value === "false") {
+                    $default = $xModel . ": " . $widget->value;
+                } else {
+                    $default = $xModel . ": '" . $widget->value . "'";
                 }
-                $default = count($default) ? $xModel . ": ['" . implode("', '", $default) . "']" : $xModel . ": []";
-            } elseif ($widget->type === 'radio') {
-                foreach ($widget->options as $option) {
-                    if (isset($option['default']) && $option['default'] === "1") $default = $option['value'];
-                }
-                $default = $xModel . ": '" . $default. "'";
-            } elseif (is_int($widget->value) || is_float($widget->value) || $widget->value === "true" || $widget->value === "false") {
-                $default = $xModel . ": " . $widget->value;
+                $GLOBALS['TL_ALPINEJS']['MODEL_OBJECT'][] = $default;
             } else {
-                $default = $xModel . ": '" . $widget->value . "'";
+                $widget->addAttribute($prefix . 'model', $widget->xModel);
             }
-            $GLOBALS['TL_ALPINEJS']['MODEL_OBJECT'][] = $default;
 
             if ($widget->xOnChange) $widget->addAttribute($prefixOn . 'change', $widget->xOnChange);
             if ($widget->xBindRequired) $widget->addAttribute($prefixBind . 'required', $widget->xBindRequired);
