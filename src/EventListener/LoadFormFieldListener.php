@@ -24,7 +24,7 @@ class LoadFormFieldListener
             return $widget;
         }
 
-        if (!in_array($widget->type, [ 'explanation', 'fieldsetStart', 'text', 'textdigit', 'textcustom', 'password', 'passwordcustom', 'textarea', 'textareacustom', 'select', 'radio', 'checkbox', 'upload', 'range', 'hidden', 'hiddencustom', 'submit' ])) {
+        if (!in_array($widget->type, [ 'explanation', 'fieldsetStart', 'email', 'number', 'tel', 'url', 'text', 'textdigit', 'textcustom', 'password', 'passwordcustom', 'textarea', 'textareacustom', 'select', 'radio', 'checkbox', 'upload', 'range', 'hidden', 'hiddencustom', 'submit' ])) {
             return $widget;
         }
 
@@ -36,13 +36,13 @@ class LoadFormFieldListener
 
         // Widget x-init, x-show and :class
         if ($widget->xInit) $widget->rowAttributes .= ' ' . $prefix . 'init="' . $widget->xInit . '"';
-        if (in_array($widget->type, [ 'explanation', 'fieldsetStart', 'text', 'textdigit', 'textcustom', 'password', 'passwordcustom', 'textarea', 'textareacustom', 'select', 'radio', 'checkbox', 'upload', 'range', 'submit' ])) {
+        if (in_array($widget->type, [ 'explanation', 'fieldsetStart', 'email', 'number', 'tel', 'url', 'text', 'textdigit', 'textcustom', 'password', 'passwordcustom', 'textarea', 'textareacustom', 'select', 'radio', 'checkbox', 'upload', 'range', 'submit' ])) {
             if ($widget->xShow) $widget->rowAttributes .= ' ' . $prefix . 'show="' . $widget->xShow . '"';
             if ($widget->xClass) $widget->rowAttributes .= ' ' . $prefixBind . 'class="' . $widget->xClass . '"';
         }
 
         // Field x-model, @change and :required
-        if (in_array($widget->type, [ 'text', 'textdigit', 'textcustom', 'password', 'passwordcustom', 'textarea', 'textareacustom', 'select', 'radio', 'checkbox', 'upload', 'range', 'hidden', 'hiddencustom' ])) {
+        if (in_array($widget->type, [ 'email', 'number', 'tel', 'url', 'text', 'textdigit', 'textcustom', 'password', 'passwordcustom', 'textarea', 'textareacustom', 'select', 'radio', 'checkbox', 'upload', 'range', 'hidden', 'hiddencustom' ])) {
             if ($form->xData && str_contains($form->xData, '&#35;&#35;model_object&#35;&#35;')) {
                 $xModel = $widget->xModel ?: $widget->name;
                 $widget->addAttribute($prefix . 'model', $xModel);
@@ -79,12 +79,12 @@ class LoadFormFieldListener
         }
 
         // Field @input
-        if (in_array($widget->type, [ 'text', 'textdigit', 'textcustom', 'password', 'passwordcustom', 'textarea', 'textareacustom' ])) {
+        if (in_array($widget->type, [ 'email', 'number', 'tel', 'url', 'text', 'textdigit', 'textcustom', 'password', 'passwordcustom', 'textarea', 'textareacustom' ])) {
             if ($widget->xOnInput) $widget->addAttribute($prefixOn . 'input', $widget->xOnInput);
         }
 
         // Field/Button @focus, @blur, :class and :disabled
-        if (in_array($widget->type, [ 'text', 'textdigit', 'textcustom', 'password', 'passwordcustom', 'textarea', 'textareacustom', 'select', 'radio', 'checkbox', 'upload', 'range', 'submit' ])) {
+        if (in_array($widget->type, [ 'email', 'number', 'tel', 'url', 'text', 'textdigit', 'textcustom', 'password', 'passwordcustom', 'textarea', 'textareacustom', 'select', 'radio', 'checkbox', 'upload', 'range', 'submit' ])) {
             if ($widget->xOnFocus) $widget->addAttribute($prefixOn . 'focus', $widget->xOnFocus);
             if ($widget->xOnBlur) $widget->addAttribute($prefixOn . 'blur', $widget->xOnBlur);
             if ($widget->xBindClass) $widget->addAttribute($prefixBind . 'class', $widget->xBindClass);
