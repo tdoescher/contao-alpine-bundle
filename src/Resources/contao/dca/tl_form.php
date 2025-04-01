@@ -22,28 +22,28 @@ $GLOBALS['TL_DCA']['tl_form']['fields']['xData'] = [
     'exclude' => true,
     'inputType' => 'textarea',
     'eval' => [ 'rte' => 'ace|js', 'tl_class' => 'clr w100' ],
-    'sql' => [ 'type' => 'text', 'default' => '' ]
+    'sql' => [ 'type' => 'text', 'notnull' => false ]
 ];
 
 $GLOBALS['TL_DCA']['tl_form']['fields']['xInit'] = [
     'exclude' => true,
     'inputType' => 'text',
     'eval' => [ 'rte' => 'ace|js', 'tl_class' => 'clr w100' ],
-    'sql' => [ 'type' => 'text', 'default' => '' ]
+    'sql' => [ 'type' => 'text', 'notnull' => false ]
 ];
 
 $GLOBALS['TL_DCA']['tl_form']['fields']['xSubmit'] = [
     'exclude' => true,
     'inputType' => 'text',
     'eval' => [ 'rte' => 'ace|js', 'tl_class' => 'clr w100' ],
-    'sql' => [ 'type' => 'text', 'default' => '' ]
+    'sql' => [ 'type' => 'text', 'notnull' => false ]
 ];
 
 $GLOBALS['TL_DCA']['tl_form']['fields']['xClass'] = [
     'exclude' => true,
     'inputType' => 'text',
     'eval' => [ 'rte' => 'ace|js', 'tl_class' => 'clr w100' ],
-    'sql' => [ 'type' => 'text', 'default' => '' ]
+    'sql' => [ 'type' => 'text', 'notnull' => false ]
 ];
 
 $GLOBALS['TL_DCA']['tl_form']['fields']['alpinejsPrefix'] = [
