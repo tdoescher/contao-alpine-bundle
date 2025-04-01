@@ -32,6 +32,12 @@
             <trans-unit id="tl_form_field.xModel.1">
                 <source>Overwrite the x-model attribute for this field (default = field name).</source>
             </trans-unit>
+            <trans-unit id="tl_form_field.xRef.0">
+                <source>Field x-ref</source>
+            </trans-unit>
+            <trans-unit id="tl_form_field.xRef.1">
+                <source>Activate attribute x-ref for this field (same as field name).</source>
+            </trans-unit>
             <trans-unit id="tl_form_field.xOnInput.0">
                 <source>Field @input</source>
             </trans-unit>

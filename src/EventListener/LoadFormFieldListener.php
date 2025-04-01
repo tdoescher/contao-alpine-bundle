@@ -41,7 +41,7 @@ class LoadFormFieldListener
             if ($widget->xClass) $widget->rowAttributes .= ' ' . $prefixBind . 'class="' . $widget->xClass . '"';
         }
 
-        // Field x-model, @change and :required
+        // Field x-model, x-ref, @change and :required
         if (in_array($widget->type, [ 'email', 'number', 'tel', 'url', 'text', 'textdigit', 'textcustom', 'password', 'passwordcustom', 'textarea', 'textareacustom', 'select', 'radio', 'checkbox', 'upload', 'range', 'hidden', 'hiddencustom' ])) {
             if ($form->xData && str_contains($form->xData, '&#35;&#35;model_object&#35;&#35;')) {
                 $xModel = $widget->xModel ?: $widget->name;
@@ -69,6 +69,7 @@ class LoadFormFieldListener
                 $widget->addAttribute($prefix . 'model', $widget->xModel);
             }
 
+            if ($widget->xRef) $widget->addAttribute($prefix . 'ref', $widget->name);
             if ($widget->xOnChange) $widget->addAttribute($prefixOn . 'change', $widget->xOnChange);
             if ($widget->xBindRequired) $widget->addAttribute($prefixBind . 'required', $widget->xBindRequired);
         }
