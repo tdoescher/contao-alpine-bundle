@@ -24,11 +24,12 @@ $GLOBALS['TL_DCA']['tl_form_field']['fields']['xClass'] = [
 $GLOBALS['TL_DCA']['tl_form_field']['fields']['xModel'] = [
     'exclude' => true,
     'inputType' => 'text',
-    'eval' => [ 'maxlength' => 255, 'tl_class' => 'w50' ],
+    'eval' => [ 'maxlength' => 255, 'spaceToUnderscore' => true, 'tl_class' => 'w50' ],
     'sql' => [ 'type' => 'string', 'default' => '' ]
 ];
 
 $GLOBALS['TL_DCA']['tl_form_field']['fields']['xRef'] = [
+    'exclude' => true,
     'inputType' => 'checkbox',
     'eval' => [ 'tl_class' => 'w50 m12 cbx' ],
     'sql' => [ 'type' => 'boolean', 'default' => false ]
