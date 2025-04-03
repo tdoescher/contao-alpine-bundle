@@ -75,7 +75,7 @@ class LoadFormFieldListener
         }
 
         // Button @click
-        if (in_array($widget->type, [ 'submit' ])) {
+        if ($widget->type === 'submit' ) {
             if ($widget->xOnClick) $widget->addAttribute($prefixOn . 'input', $widget->xOnClick);
         }
 
