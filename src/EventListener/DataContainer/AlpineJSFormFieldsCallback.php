@@ -37,7 +37,7 @@ class AlpineJSFormFieldsCallback
         $field = FormFieldModel::findById($dc->id);
         $form = FormModel::findById($field->pid);
 
-        if ($field === null && $form === null && !$form->alpinejsActive) {
+        if ($field === null || $form === null || !$form->alpinejsActive) {
             return;
         }
 
