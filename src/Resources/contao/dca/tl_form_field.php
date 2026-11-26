@@ -25,7 +25,7 @@ $GLOBALS['TL_DCA']['tl_form_field']['fields']['xModel'] = [
     'exclude' => true,
     'inputType' => 'text',
     'eval' => [ 'maxlength' => 255, 'spaceToUnderscore' => true, 'tl_class' => 'w50' ],
-    'sql' => [ 'type' => 'text', 'default' => '' ]
+    'sql' => [ 'type' => 'string', 'length' => 255, 'default' => '' ]
 ];
 
 $GLOBALS['TL_DCA']['tl_form_field']['fields']['xRef'] = [
